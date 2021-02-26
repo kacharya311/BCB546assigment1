@@ -115,9 +115,9 @@ awk -f transpose.awk geno_teosinte.txt > transposed_geno_teosinte.txt
 ## Sorting the data before join 
 #### The second and third row do not contain genotype data, so the second command skips them while keeping the header
 ```
-head -n 1 transposed_teosinte_genotypes.txt > teosinte_sorted.txt
+head -n 1 transposed_geno_teosinte.txt > teosinte_sorted.txt
 
-tail -n+4 transposed_teosinte_genotypes.txt | sort  -k1,1 >>teosinte_sorted.txt
+tail -n+4 transposed_geno_teosinte.txt | sort  -k1,1 >>teosinte_sorted.txt
 ```
 ## Joining the two files
 ```
