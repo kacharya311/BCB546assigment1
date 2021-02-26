@@ -52,13 +52,13 @@ Inspection of data to figure out the header and number of rows
 ```
 `join -1 1 -2 1 --header  sorted_snp1_column.txt maize_sorted1.txt > maize_joined.txt`
 
-sed -i "s/ /\t/ g maize_joined.txt
+sed -i "s/ /\t/g" maize_joined.txt
 ```
 
 ## Creating 10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by '?'
 ### Creating maize directory  and creating Chromo\_(Chromosome number)\_ascending.txt for each chromosome with just the header row this symbol: ?
 ```
- `mkdir maize
+ `mkdir maize`
  
  head -n 1 maize_joined.txt | awk 'BEGIN {FS="\t"; OFS="\t"}{ for (i=1; i <= 10; i++) print $0 >"maize/Chromo_"i"_ascending.txt"}'`
  ```
